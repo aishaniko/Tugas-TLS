@@ -1,0 +1,37 @@
+#include <iostream>
+#include <math.h>
+#define PHI 3.14
+using namespace std;
+int main()
+{
+   int bangun_ruang;
+   float diameter;
+   float tinggi;
+   float volume_tabung;
+   float luas_permukaan_tabung;
+   float volume_kerucut;
+   float luas_permukaan_kerucut;
+   bool tabung, kerucut;
+   
+   cout << "Memilih Tabung (0) atau Kerucut (1)";
+   cin >> bangun_ruang ;
+   cout << "Masukkan Diameter Bangun Ruang (dalam meter):";
+   cin >> diameter ;
+   cout << "Masukkan Tinggi Bangun Ruang (dalam meter): ";
+   cin >> tinggi ;
+   
+   volume_tabung = (PHI*(pow(diameter/2,2))*tinggi);
+   luas_permukaan_tabung = (2*PHI*diameter/2)*(diameter/2 + tinggi);
+   volume_kerucut = (PHI*(diameter/2)*(diameter/2)*tinggi)/3 ;
+   luas_permukaan_kerucut = (PHI*(diameter/2)*(diameter/2))+(PHI*(diameter/2)*(sqrt(pow(diameter/2,2)+(pow(tinggi,2)))));
+   
+   if (bangun_ruang == 1) {
+       cout << "Volume Tabung Adalah " << volume_tabung << "m^3\n" ;
+       cout << "Luas Permukaan Tabung Adalah " << luas_permukaan_tabung << "m^2\n";
+   } 
+   else {
+       cout << "Volume Kerucut Adalah " << volume_kerucut << "m^3\n" ;
+       cout << "Luas Permukaan Kerucut Adalah " << luas_permukaan_kerucut << "m^2";
+   }
+   return 0;
+}
